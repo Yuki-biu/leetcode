@@ -21,11 +21,10 @@ func minEatingSpeed(piles []int, H int) int {
 			break;
 		}
 		if canEatAllBananas(piles, H, low) {
-
+			return low
 		}
 		low++
 	}
-
 	// 是否可以吃完  1--max  low
 	return low
 }
@@ -33,7 +32,7 @@ func minEatingSpeed(piles []int, H int) int {
 func canEatAllBananas(piles []int, H int, k int) bool {
 	h := 0
 	for i := 0; i < len(piles); i++ {
-		h += int(math.Ceil(piles[i] / k)) 
+		h += int(math.Ceil(float64(piles[i]) / float64(k))) 
 	}
 	if H < h {
 		return false
