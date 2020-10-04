@@ -11,8 +11,8 @@ var findContentChildren = function (g, s) {
     for (let i = 0; i < s.length; i++) {
         if (s[i] >= g[total]) {
             total++;
-            if (total >= g.length) return total
         }
+        if (total >= g.length) return total
     }
     return total;
 };
